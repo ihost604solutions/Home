@@ -17,3 +17,6 @@ body,h1,h2,h3,h4,h5,h6,p,li,blockquote,figcaption,summary,a,label,button,input,s
 
 /* Maple accents inspired by the orange and navy vehicle wrap. */
 .maple-divider{display:flex;align-items:center;justify-content:center;gap:24px;width:min(1080px,calc(100% - 36px));margin:28px auto 12px;pointer-events:none}.maple-divider::before,.maple-divider::after{content:"";height:1px;flex:1;max-width:210px;background:linear-gradient(90deg,transparent,#f25c1980)}.maple-divider::after{transform:scaleX(-1)}.maple-divider img{display:block;width:66px;height:70px;flex:none;transform:rotate(-12deg)}.intro-section+.faq+.maple-divider img{transform:rotate(12deg)}@media(max-width:700px){.maple-divider{gap:16px;margin:22px auto 8px}.maple-divider img{width:52px;height:56px}}
+
+/* Native desktop cursor; the lower stem tip is the click hotspot. */
+@media(hover:hover) and (pointer:fine){body,body a,body button,body summary,body select,body label,body [role="button"]{cursor:url("/assets/maple-cursor.svg") 16 32,auto}body input,body textarea,body [contenteditable="true"]{cursor:text}body button:disabled,body [aria-disabled="true"]{cursor:not-allowed}}
