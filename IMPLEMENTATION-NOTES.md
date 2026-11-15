@@ -13,3 +13,5 @@ Counter: 1,131 completed service jobs = 996 QC work orders + 135 owner-reported 
 services.ihost604.ca is a separate WordPress site, outside this repository. Its phone and marketing claims require separate owner access and verification.
 
 Future decisions: approved price ranges and workmanship terms; confirmed analytics destination; authoritative counter data and update pipeline. Do not invent guarantees, credentials, response times or live statistics.
+
+Google Tag Manager container GTM-5Z8R9HTD installed across nine public HTML pages. Redirect page excluded. No GA4 measurement ID or reporting tags configured yet; verify via Tag Assistant and GA4 Realtime after publishing the container.
