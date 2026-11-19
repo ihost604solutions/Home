@@ -4,7 +4,7 @@ Published quote forms use Tally form 4aJgbX on all eight service/landing pages. 
 
 The legacy request-preview page redirects to the current form; FormSubmit is no longer used by that page.
 
-Both contact numbers appear equally sized in booking, footer and fixed contact controls. LocalBusiness structured data includes both numbers. The phone printed inside existing vehicle artwork is not editable text and remains an artwork exception.
+As of November 19, 2026, booking and fixed contact controls use only 604-305-5050. Footer presents this primary number prominently and 604-399-4797 separately as Customer Support. LocalBusiness telephone uses the primary number; contactPoint identifies customer support. The phone printed inside existing vehicle artwork is not editable text and remains an artwork exception.
 
 The homepage has a direct quote CTA, project gallery and founder introduction. Property-manager content includes the office ceiling/lighting project. Privacy copy reflects Tally and email notifications.
 
