@@ -32,4 +32,6 @@ body,h1,h2,h3,h4,h5,h6,p,li,blockquote,figcaption,summary,a,label,button,input,s
 .hero-actions .button{margin:0!important;max-width:100%;flex:0 1 300px}.hero-actions>a:not(.button){display:inline-block;padding:12px}
 
 /* One primary booking number; support stays in footer. */
-.site-footer .footer-main-phone a{font-size:clamp(28px,6vw,40px);font-weight:800;line-height:1.3;white-space:nowrap;text-decoration:none}.site-footer .footer-support{font-size:14px;font-weight:400}.site-footer .footer-support a{font-weight:400}.mobile-contact .quick-phones{justify-content:center}.mobile-contact .quick-phones .primary-call{font-size:clamp(17px,4.4vw,22px);min-height:48px;font-weight:800;white-space:nowrap;background:transparent;color:#fff}
+.site-footer .footer-main-phone a{font-size:clamp(28px,6vw,40px);font-weight:800;line-height:1.3;white-space:nowrap;text-decoration:none}.site-footer .footer-support{font-size:18px;font-weight:400;margin-bottom:8px}.site-footer .footer-support a{font-weight:400}.mobile-contact .quick-phones{justify-content:center}.mobile-contact .quick-phones .primary-call{font-size:clamp(17px,4.4vw,22px);min-height:48px;font-weight:800;white-space:nowrap;background:transparent;color:#fff}
+
+.site-footer .footer-email{font-size:18px;margin-top:0}.site-footer .footer-email a{display:inline-block;overflow-wrap:anywhere}
