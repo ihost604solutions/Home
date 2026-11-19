@@ -8,7 +8,7 @@ Both contact numbers appear equally sized in booking, footer and fixed contact c
 
 The homepage has a direct quote CTA, project gallery and founder introduction. Property-manager content includes the office ceiling/lighting project. Privacy copy reflects Tally and email notifications.
 
-Counter: 1,131 completed service jobs = 996 QC work orders + 135 owner-reported direct jobs. Static snapshot, not an automatic weekly sync. Review excerpts are saved selections, not live totals. Analytics events have no connected analytics provider.
+Counter: 1,311 completed service jobs, updated November 19, 2026 at the owner's instruction. The prior November 15 snapshot (1,131 = 996 QC work orders + 135 direct jobs) is retained as historical metadata; no new source split has been supplied. Static snapshot, not an automatic weekly sync. Review excerpts are saved selections, not live totals. Analytics events have no connected analytics provider.
 
 services.ihost604.ca is a separate WordPress site, outside this repository. Its phone and marketing claims require separate owner access and verification.
 
