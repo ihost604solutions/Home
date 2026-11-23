@@ -6,9 +6,9 @@
 
 ## Verified inventory (2026-11-22)
 - The main website has a Google Tag Manager snippet for **GTM-5Z8R9HTD**, on its customer-facing pages.
-- The repository has **no verified GA4 web stream Measurement ID (`G-...`)**, and a GTM container snippet by itself does not establish that GA4 collects data.
-- A Google setup email sent on 2026-11-15 to `ihost604@gmail.com` refers to a **different** ID, **GTM-5KV8TKL7**. Do **not** add it to the site or overwrite the existing container until ownership, destination, and purpose have been verified.
-- Customer quote forms are Tally **4aJgbX** (embedded across nine pages). Existing code is an iframe embed; no confirmed 'Track form events' option was detected in the embed snippet.
+- **Owner-verified GA4 measurement ID:** `G-FMSTQRQQ8J` for the `iHost web - GA4` property. Its Google Analytics tag is present under GTM `GTM-5Z8R9HTD` with an `Initialization - All Pages` trigger. GA4 Realtime reported visitor activity after a website visit; attribution of one specific user is not independently confirmed.
+- An earlier Google setup email refers to `GTM-5KV8TKL7`, but the owner’s GTM screenshot confirms `GTM-5Z8R9HTD` belongs to iHost and is installed on the site. **Keep the existing container; do not install or duplicate the older emailed ID.**
+- The owner supplied a new **Tally 4aJgbX** Standard embed snippet with **`formEventsForwarding=1`** after enabling **Track form events**. This draft adds that exact parameter to the embedded form URL on all nine pages, preserving the pre-existing embed height `2100`, title, background, align, dynamic sizing and script. It changes only HTML source attributes, not the visual design.
 - The main site already pushes `click_call` and `quote_open` to `window.dataLayer`.
 - Tally also offers a standalone new-tab form link. Events fired on the standalone `tally.so` page will **not** automatically be attributed to this website's GA4 session.
 - No payment, advertising budget, or new website appearance is involved in this change.
@@ -29,11 +29,11 @@ Deduplication: the website ignores duplicate `Tally.FormSubmitted` notifications
 
 ## Configuration to complete in the owner's Google account
 
-1. **Identify the correct Tag Manager container.** Log in at `https://tagmanager.google.com/` with the iHost-controlled account; confirm `GTM-5Z8R9HTD` is under iHost ownership. Investigate why Google emailed a different ID `GTM-5KV8TKL7`. Do not install two containers accidentally.
-2. **Create or identify an iHost-owned GA4 property.** Use `https://analytics.google.com/` -> Admin -> Data streams. Web stream URL must be `https://ihost604.ca/`. Record the real Measurement ID `G-...`; no placeholders or guesses in production code.
-3. **Configure Google tag in the verified GTM container.** Tag type: Google tag; ID = real `G-...`; trigger = Initialization/All Pages as suitable for the consent setup. Do not paste an additional hardcoded `gtag.js` snippet into the site.
+1. **Confirmed:** Use the existing iHost-owned Google Tag Manager container `GTM-5Z8R9HTD`. The earlier `GTM-5KV8TKL7` email is not a reason to install another container.
+2. **Confirmed:** Use the current `iHost web - GA4` Google Analytics property and the owner-verified measurement ID `G-FMSTQRQQ8J`. Its Realtime overview has reported active users. Confirm the exact data-stream URL in GA4 Admin, if necessary.
+3. **Confirmed:** The existing Google Analytics tag for `G-FMSTQRQQ8J` fires on `Initialization - All Pages` in GTM. Do not create a duplicate GA4 base tag or add a separate `gtag.js` snippet.
 4. **Configure GA4 event tags in GTM.** Each event tag uses the verified stream's Google tag and the Custom Event trigger matching the table above. Map `page_path` and other fixed, non-PII parameters as needed. Only `generate_lead` should be considered the completed-form primary key event initially.
-5. **Enable 'Track form events' for the Tally embed.** In the Tally form's Share -> Embed settings choose **Track form events** and obtain the exact tracking-enabled snippet. Preserve the existing styling. Its events should reach the parent site. If that option generates different embed markup, prepare a separate, owner-approved code change; do not invent Tally attributes. For standalone Tally forms, consider a verified custom domain or separate Tally GA4 setup later.
+5. **Confirmed embed option:** The owner enabled **Track form events** for the Tally Standard embed and provided the generated code with `formEventsForwarding=1`. This draft adds the parameter on all nine pages. After publication, test whether `Tally.FormSubmitted` reaches the parent website. For standalone `tally.so/r/4aJgbX` links, same-session tracking needs separate handling and is not included in this release.
 6. **Test before publishing GTM.** Use Tag Assistant Preview on `ihost604.ca` and GA4 DebugView; verify page views, a phone/WhatsApp click, and **one genuine test Tally submission**. Verify a single `generate_lead` event is received, not two, and that it uses the right form. The test submission must be clearly marked as a test in internal lead reports.
 7. **Publish the GTM container only after reviewing all test outcomes and privacy/consent requirements.** In GA4 Admin, mark `generate_lead` as a **key event** (Google Ads conversions can be considered later when independent ads are ready). Keep micro-interaction events separate from lead conversion counts.
 8. **Google Ads remains separate.** Do not link or alter the agency's Google Ads account without specific owner approval.
@@ -41,7 +41,7 @@ Deduplication: the website ignores duplicate `Tally.FormSubmitted` notifications
 ## SMART milestone
 - **Specific:** Track site visits, quote intent, call/WhatsApp intent, and successful Tally submissions on `ihost604.ca`.
 - **Measurable:** One verified GA4 stream, one confirmed `generate_lead` per completed test form, call click in DebugView, event names reported by landing page.
-- **Achievable:** Website code and existing GTM snippet are ready. Remaining blockers are correct Google/Tally account configuration and consent/testing.
+- **Achievable:** Google container, Analytics property and tracking-enabled Tally snippet are now verified. Remaining blockers are PR approval, GTM event-tag configuration, Tally end-to-end testing, and any necessary consent checks.
 - **Relevant:** Supports a data-driven 6–12 month move from agency dependence.
 - **Time-bound:** Complete account checks and a successful end-to-end measurement test within the next 7 days *after the necessary account access is available*.
 
@@ -51,3 +51,14 @@ References:
 - https://tally.so/help/track-form-events-with-google-tag-manager-or-meta-pixel
 - https://support.google.com/tagmanager/answer/13034206
 - https://support.google.com/analytics/answer/9267735
+
+## Tally embed comparison (confirmed against the user-provided exact snippet)
+
+- Original URL: `https://tally.so/embed/4aJgbX?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1`
+- Updated URL: `https://tally.so/embed/4aJgbX?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1`
+- The user’s freshly generated embed shows an initial `height="200"`; the existing website uses `height="2100"` with dynamic height. Keep **2100** to avoid the appearance/initial-height change. The Tally `widgets/embed.js` script already exists on each page, so no replacement is needed.
+- Change the `/assets/site.js` query-string version on the nine pages to `?v=20261122leadtracking` so returning visitors receive the updated event listener instead of an older cached copy.
+- The privacy page previously said Analytics reporting was not configured, which no longer matched the confirmed GA4 property. This draft corrects that text without changing its layout.
+- **Avoid double counting:** In GTM, configure a custom-event trigger for **`generate_lead`** after the website listener pushes it. Do not separately map **`Tally.FormSubmitted`** to GA4's **`generate_lead`** event. One submission should appear exactly once in DebugView.
+
+**Publication remains unapproved and tracking not live until GitHub PR #6 is explicitly approved and any needed Google Tag Manager changes are configured/published separately.**
